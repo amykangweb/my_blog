@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Author:</strong>
+  <%= @post.user.name %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
@@ -15,18 +20,15 @@
   <%= @post.private %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<% if user_signed_in? %>
+	<% if current_user == @post.user %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Destroy', @post, method: :delete, data: {confirm: "Are you sure?"} %>
+	<% end %>
+<% end %>
 
 <p>
-	<strong>Comments:</strong>
-	<% unless @post.comments.blank? %>
-		<% @post.comments.each do |comment| %>
-			<p><%= comment.body %></p>
-		<% end %>
-	<% else %>
-		No Comments
-	<% end %>
+<%= render "comments" %>
 </p>
 
 <p>

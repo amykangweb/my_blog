@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy, :check_user]
   before_action :set_post
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :check_user, only: :destroy
 
   # GET /comments
   # GET /comments.json
@@ -26,6 +28,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.post_id = @post.id
+    @comment.user_id = current_user.id
 
     respond_to do |format|
       if @comment.save
@@ -57,12 +60,18 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @post, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+
+    def check_user
+      unless current_user == @comment.user || current_user == @post.user
+        redirect_to root_url, alert: "You are not authorized."
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:post_id])
