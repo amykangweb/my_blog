@@ -49,6 +49,10 @@
     <em>Private Post</em>
   <% end %>
 
+<p>
+  <%= social_share_button_tag("My Blog") %>
+</p>
+
 
 <% if user_signed_in? %>
 	<% if current_user == @post.user %>
