@@ -16,9 +16,34 @@
 </p>
 
 <p>
-  <strong>Private:</strong>
-  <%= @post.private %>
+  <strong>Like:</strong>
+
+<div class="vote">
+
+<% if user_signed_in? %>
+
+  <%= render 'vote' %>
+
+<% else %>
+
+  <%= link_to "Like", new_user_session_path, alert: "Please login to vote." %>
+
+<% end %>
+
+</div>
+
 </p>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @post.score %>
+</p>
+
+
+  <% if @post.private == true %>
+    <em>Private Post</em>
+  <% end %>
+
 
 <% if user_signed_in? %>
 	<% if current_user == @post.user %>
