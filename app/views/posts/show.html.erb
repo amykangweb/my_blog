@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Photo:</strong><br />
+  <%= image_tag @post.user.gravatar_url %>
+</p>
+
+<p>
   <strong>Author:</strong>
   <%= @post.user.name %>
 </p>
