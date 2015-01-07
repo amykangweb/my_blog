@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(private: false)
+    @posts = Post.where(private: false).paginate(page: params[:page])
   end
 
   # GET /posts/1

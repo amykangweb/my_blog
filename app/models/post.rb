@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
 	validates :content, presence: true
 	acts_as_votable
 
+	self.per_page = 10
+
 	def score
 		self.get_upvotes.size - self.get_downvotes.size
 	end

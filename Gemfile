@@ -41,6 +41,8 @@ gem 'gravtastic'
 gem 'social-share-button', '~> 0.1.6'
 
 gem 'tinymce-rails'
+
+gem 'will_paginate', '~> 3.0.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
