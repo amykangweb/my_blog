@@ -39,6 +39,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'gravtastic'
 
 gem 'social-share-button', '~> 0.1.6'
+
+gem 'tinymce-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
