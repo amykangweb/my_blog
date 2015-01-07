@@ -9,7 +9,6 @@ Rails.application.routes.draw do
       put "like", to: "posts#upvote"
       put "unlike", to: "posts#downvote"
     end
-      resources :comments
   end
 
   root "posts#index"
