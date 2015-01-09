@@ -9,7 +9,10 @@
 <% @posts.each do |post| %>
 
 <h2><%= link_to post.title, post %></h2>
-<p><em>Posted by:</em> <%= link_to @user.name, @user %></p>
+
+<p>
+	<em>Posted: <%= post.created_at.strftime("%b %d %Y") %>&nbsp;</em>By:</em> <%= link_to @user.name, @user %>
+</p>
 
 <p>
 <%= post.content.html_safe %>
