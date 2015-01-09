@@ -84,7 +84,7 @@ class PostsController < ApplicationController
 
     def check_user
       @post = Post.find(params[:id])
-      unless @post.user == current_user
+      unless @post.user == current_user || current_user.admin?
         redirect_to root_url, alert: "You are not authorized."
       end
     end

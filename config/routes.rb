@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  match 'users/show', to: "users#show", via: 'get'
+
   root "posts#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
