@@ -43,6 +43,11 @@ gem 'social-share-button', '~> 0.1.6'
 gem 'tinymce-rails'
 
 gem 'will_paginate', '~> 3.0.6'
+
+gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip-dropbox', '>= 1.1.7'
+
+gem 'figaro'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

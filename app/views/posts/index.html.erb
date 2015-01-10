@@ -16,7 +16,12 @@
       <tr>
         <td><%= link_to post.title, post %></td>
         <td><%= link_to post.user.name, post.user %></td>
-        <td><%= strip_tags(post.content) %></td>
+        <td>
+          <% if post.image.exists? %>
+            <p><%= image_tag post.image.url(:thumb) %></p>
+          <% end %>
+          <%= strip_tags(post.content) %>
+        </td>
         <td><%= "#{post.score} Likes" %></td>
       </tr>
     <% end %>

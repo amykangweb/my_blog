@@ -25,6 +25,15 @@
   <%= @post.content.html_safe %>
 </p>
 
+<% if @post.image.exists? %>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @post.image.url(:medium) %>
+</p>
+
+<% end %>
+
 <p>
   <strong>Like:</strong>
 
