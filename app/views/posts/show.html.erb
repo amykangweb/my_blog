@@ -20,11 +20,6 @@
   <%= @post.created_at.strftime("%b %d %Y") %>
 </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content.html_safe %>
-</p>
-
 <% if @post.image.exists? %>
 
 <p>
@@ -33,6 +28,11 @@
 </p>
 
 <% end %>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content.html_safe %>
+</p>
 
 <p>
   <strong>Like:</strong>
