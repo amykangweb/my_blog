@@ -1,5 +1,22 @@
 class UsersController < ApplicationController
+before_action :authenticate_user!, only: [:upvote, :downvote]
 before_action :set_user
+
+def upvote
+    @user.post.liked_by current_user
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+def downvote
+    @user.post.unliked_by current_user
+
+    respond_to do |format|
+      format.js
+    end
+end
 
 def show
 	if user_signed_in?

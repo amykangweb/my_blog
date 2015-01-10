@@ -14,6 +14,10 @@
 	<em>Posted: <%= post.created_at.strftime("%b %d %Y") %>&nbsp;</em>By:</em> <%= link_to @user.name, @user %>
 </p>
 
+<% if post.image.exists? %>
+	<p><%= image_tag post.image.url(:medium) %></p>
+<% end %>
+
 <p>
 <%= post.content.html_safe %>
 </p>
@@ -26,6 +30,25 @@
 <em>Private Post</em>
 </p>
 <% end %>
+
+<div class="vote">
+
+<% if user_signed_in? %>
+
+  <%= render partial: 'vote', locals: {post: post} %>
+
+<% else %>
+
+  <%= link_to "Like", new_user_session_path, alert: "Please login to vote." %>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @post.score %>
+</p>
+
+<% end %>
+
+</div>
 
 <%= link_to "Edit", edit_post_path(post) %> | 
 <%= link_to "Delete", post, method: :delete, data: {confirm: "Are you sure?"} %>

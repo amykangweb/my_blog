@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Photo:</strong><br />
   <%= image_tag @post.user.gravatar_url %>
@@ -49,7 +47,7 @@
 
 <p>
   <strong>Likes:</strong>
-  <%= @post.score %>
+  <%= post.score %>
 </p>
 
 <% end %>

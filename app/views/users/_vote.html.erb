@@ -1,0 +1,14 @@
+<% if current_user.voted_for?(post) %>
+
+<%= link_to "Unlike", unlike_post_path(post), method: :put, remote: true %>
+
+<% else %>
+
+<%= link_to "Like", like_post_path(post), method: :put, remote: true %>
+
+<% end %>
+
+<p>
+  <strong>Likes:</strong>
+  <%= post.score %>
+</p>

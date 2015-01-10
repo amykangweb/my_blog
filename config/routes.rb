@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users do
+    member do
+      put "like", to: "posts#upvote"
+      put "unlike", to: "posts#downvote"
+    end
+  end
 
   resources :posts do
     member do
