@@ -28,12 +28,4 @@
   </tbody>
 </table>
 
-<%= will_paginate @posts %>
-
-<br>
-
-<% if user_signed_in? %>
-
-<%= link_to 'New Post', new_post_path %>
-
-<% end %>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
