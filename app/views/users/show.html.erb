@@ -1,10 +1,9 @@
-<% if user_signed_in? %>
-<% if @user == current_user %>
-<%= link_to "New Post", new_post_path %>
-<% end %>
-<% end %>
-
+<% provide(:title, "#{@user.name}'s Blog") %>
 <h1><%= @user.name %>'s Blog</h1>
+
+<p>
+  <%= image_tag @user.gravatar_url %>
+</p>
 
 <% @posts.each do |post| %>
 
@@ -30,6 +29,8 @@
 <em>Private Post</em>
 </p>
 <% end %>
+<% end %>
+<% end %>
 
 <div class="vote">
 
@@ -50,6 +51,9 @@
 
 </div>
 
+<% if user_signed_in? %>
+<% if current_user == post.user || current_user.admin? %>
+
 <%= link_to "Edit", edit_post_path(post) %> | 
 <%= link_to "Delete", post, method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
@@ -57,4 +61,6 @@
 
 <% end %>
 
+<p>
 <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</p>
