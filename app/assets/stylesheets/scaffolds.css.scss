@@ -67,3 +67,32 @@ div {
     list-style: square;
   }
 }
+
+.jumbotron a {
+    color: white;
+}
+
+.navbar {
+  background-color: rgb(31, 31, 31);
+  border: none;
+  border-radius: 0;
+}
+
+.navbar a {
+  color: white;
+  &:visited {
+  color: white;
+  }
+}
+
+.navbar .nav > li > a {
+  color: white;
+}
+
+.navbar .nav > li > a:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.dropdown-menu {
+  background-color: rgb(31, 31, 31);
+}

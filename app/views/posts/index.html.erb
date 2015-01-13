@@ -1,32 +1,42 @@
 <% provide(:title, "My Blog") %>
-<h1>Latest posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Content</th>
-      <th>Likes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render "layouts/nav" %>
 
-  <tbody>
+<div class="text-center">
+
+<%= render 'billboard' %>
+
+<div class="container front-page">
+
+    <div class="row">
+
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-        <td><%= link_to post.user.name, post.user %></td>
-        <td>
-          <% if post.image.exists? %>
-            <p><%= image_tag post.image.url(:thumb) %></p>
-          <% end %>
-          <%= strip_tags(post.content) %>
-        </td>
-        <td><%= "#{post.score} Likes" %></td>
-      </tr>
+
+        <div class="col-md-12">
+
+        <h3><%= link_to post.title, post %></h3>
+
+        <%= post.created_at.strftime("%b %d %Y") %> | 
+        <%= link_to post.user.name, post.user %>
+
+        <p></p>
+
+        <% if post.image.exists? %>
+        <p><%= image_tag post.image.url(:thumb) %></p>
+        <% end %>
+
+        <p><%= h truncate(strip_tags(post.content), length: 400) %></p>
+  
+        <p><%= "#{post.score} Likes" %></p>
+
+        </div>
+
     <% end %>
-  </tbody>
-</table>
+
+</div>
 
 <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
+</div>
+
+</div>

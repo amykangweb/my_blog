@@ -1,16 +1,23 @@
 <% provide(:title, "#{@user.name}'s Blog") %>
-<h1><%= @user.name %>'s Blog</h1>
 
-<p>
-  <%= image_tag @user.gravatar_url %>
-</p>
+<%= render 'nav' %>
+
+<div class="text-center">
+
+<%= render 'billboard' %>
+
+<div class="container">
+
+<!-- Contains User Posts -->
+
+<div class="box">
 
 <% @posts.each do |post| %>
 
 <h2><%= link_to post.title, post %></h2>
 
 <p>
-	<em>Posted: <%= post.created_at.strftime("%b %d %Y") %>&nbsp;</em>By:</em> <%= link_to @user.name, @user %>
+<%= post.created_at.strftime("%b %d %Y") %> | <%= link_to @user.name, @user %>
 </p>
 
 <% if post.image.exists? %>
@@ -21,35 +28,11 @@
 <%= post.content.html_safe %>
 </p>
 
-<% if user_signed_in? %>
-<% if post.user == current_user || current_user.admin? %>
-
 <% if post.private == true %>
 <p>
 <em>Private Post</em>
 </p>
 <% end %>
-<% end %>
-<% end %>
-
-<div class="vote">
-
-<% if user_signed_in? %>
-
-  <%= render partial: 'vote', locals: {post: post} %>
-
-<% else %>
-
-  <%= link_to "Like", new_user_session_path, alert: "Please login to vote." %>
-
-<p>
-  <strong>Likes:</strong>
-  <%= post.score %>
-</p>
-
-<% end %>
-
-</div>
 
 <% if user_signed_in? %>
 <% if current_user == post.user || current_user.admin? %>
@@ -61,6 +44,13 @@
 
 <% end %>
 
+</div>
+
+<!-- End of User Posts -->
+
 <p>
 <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </p>
+
+</div>
+</div>

@@ -1,33 +1,29 @@
 <% provide(:title, "#{@post.title}") %>
 
+<%= render 'nav' %>
+
+<div class="container">
+<div class="text-center">
+
 <h2><%= @post.title %></h2>
 
 <p>
-  <strong>Author:</strong>
-  <%= link_to @post.user.name, @post.user %>
-</p>
-
-<p>
-  <strong>Posted:</strong>
-  <%= @post.created_at.strftime("%b %d %Y") %>
+  <%= @post.created_at.strftime("%b %d %Y") %> | <%= link_to @post.user.name, @post.user %>
 </p>
 
 <% if @post.image.exists? %>
 
 <p>
-  <strong>Image:</strong>
   <%= image_tag @post.image.url(:medium) %>
 </p>
 
 <% end %>
 
 <p>
-  <strong>Content:</strong>
   <%= @post.content.html_safe %>
 </p>
 
 <p>
-  <strong>Like:</strong>
 
 <div class="vote">
 
@@ -40,8 +36,7 @@
   <%= link_to "Like", new_user_session_path, alert: "Please login to vote." %>
 
 <p>
-  <strong>Likes:</strong>
-  <%= @post.score %>
+  <%= @post.score %> Likes
 </p>
 
 <% end %>
@@ -59,6 +54,7 @@
   <%= social_share_button_tag("My Blog") %>
 </p>
 
+</div>
 
 <% if user_signed_in? %>
 	<% if current_user == @post.user || current_user.admin? %>
@@ -70,3 +66,4 @@
 <p>
 <%= render "disqus" %>
 </p>
+</div>
