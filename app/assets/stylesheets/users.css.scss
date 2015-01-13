@@ -1,20 +1,57 @@
 .users {
-	background-image: image-url("https://dl.dropboxusercontent.com/s/1g9m4zkewkihmof/nebula.jpg");
-	height: 300px;
+	height: 275px;
 	padding-top: 50px;
 }
 
+.users-bg {
+	background-color: #fafaf2;
+	background-image: image-url("https://dl.dropboxusercontent.com/s/p5lz7408soov3q2/cubes.png");
+}
+
 .blogname {
-	color: white;
+	color: rgb(100, 100, 100);
+	font-family: 'Marck Script', cursive;
 }
 
 .tagline {
-	color: white;
-	font-weight: normal;
+	color: rgb(100, 100, 100);
+	font-family: 'Marck Script', cursive;
 	font-size: 20px;
+	font-weight: normal;
 	font-style: italic;
 }
 
 .gravatar {
 	border-radius: 50%;
+}
+
+.user-nav {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+
+  a {
+  color: rgb(100, 100, 100);
+  font-size: 12px;
+  &:visited {
+  color: rgb(100, 100, 100);
+  }
+  }
+
+  .nav > li > a {
+    color: rgb(100, 100, 100);
+    font-size: 12px;
+  }
+
+  .dropdown-menu {
+  background-color: white;
+  a {
+  font-size: 12px;
+  }
+}
+
+}
+
+.footer {
+	background: transparent;
 }

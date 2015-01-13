@@ -5,7 +5,7 @@
 <div class="container">
 <div class="text-center">
 
-<h2><%= @post.title %></h2>
+<h3><%= @post.title %></h3>
 
 <p>
   <%= @post.created_at.strftime("%b %d %Y") %> | <%= link_to @post.user.name, @post.user %>
@@ -45,7 +45,6 @@
 
 </p>
 
-
   <% if @post.private == true %>
     <em>Private Post</em>
   <% end %>
@@ -53,8 +52,6 @@
 <p>
   <%= social_share_button_tag("My Blog") %>
 </p>
-
-</div>
 
 <% if user_signed_in? %>
 	<% if current_user == @post.user || current_user.admin? %>
@@ -67,3 +64,7 @@
 <%= render "disqus" %>
 </p>
 </div>
+
+</div>
+
+<%= render "layouts/footer" %>

@@ -1,5 +1,7 @@
 <% provide(:title, "#{@user.name}'s Blog") %>
 
+<div class="users-bg">
+
 <%= render 'nav' %>
 
 <div class="text-center">
@@ -14,7 +16,7 @@
 
 <% @posts.each do |post| %>
 
-<h2><%= link_to post.title, post %></h2>
+<h4><%= link_to post.title, post %></h4>
 
 <p>
 <%= post.created_at.strftime("%b %d %Y") %> | <%= link_to @user.name, @user %>
@@ -53,4 +55,8 @@
 </p>
 
 </div>
+</div>
+
+<%= render "footer" %>
+
 </div>
