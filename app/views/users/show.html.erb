@@ -14,7 +14,7 @@
 
 <% @posts.each do |post| %>
 
-<div class="col-md-9 col-centered blog-posts">
+<div class="col-md-8 col-centered blog-posts">
 
 <h4><%= link_to post.title, post %></h4>
 
@@ -26,6 +26,8 @@
 	<p><%= image_tag post.image.url(:medium) %></p>
 <% end %>
 
+<div class="text-left">
+
 <p>
 <%= post.content.html_safe %>
 </p>
@@ -35,6 +37,8 @@
 <em>Private Post</em>
 </p>
 <% end %>
+
+</div>
 
 <% if user_signed_in? %>
 <% if current_user == post.user || current_user.admin? %>
