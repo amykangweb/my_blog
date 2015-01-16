@@ -3,11 +3,12 @@
 .users {
 	height: 275px;
 	padding-top: 50px;
+  margin-bottom: 20px;
 }
 
 .users-bg {
 	background-color: #fafaf2;
-	background-image: image-url("https://dl.dropboxusercontent.com/s/p5lz7408soov3q2/cubes.png");
+  background-image: image-url("https://dl.dropboxusercontent.com/s/p5lz7408soov3q2/cubes.png");
 }
 
 .blogname {
@@ -21,6 +22,7 @@
 	font-size: 20px;
 	font-weight: normal;
 	font-style: italic;
+  padding-bottom: 20px;
 }
 
 .gravatar {
@@ -52,6 +54,11 @@
   }
 }
 
+}
+
+.blog-posts {
+  background-color: transparent;
+  border: none;
 }
 
 .footer {

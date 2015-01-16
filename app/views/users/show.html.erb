@@ -12,9 +12,9 @@
 
 <!-- Contains User Posts -->
 
-<div class="box">
-
 <% @posts.each do |post| %>
+
+<div class="col-md-9 col-centered blog-posts">
 
 <h4><%= link_to post.title, post %></h4>
 
@@ -44,11 +44,9 @@
 <% end %>
 <% end %>
 
-<p style="padding-bottom: 40px;"></p>
+</div>
 
 <% end %>
-
-</div>
 
 <!-- End of User Posts -->
 
