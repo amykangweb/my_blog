@@ -63,9 +63,12 @@
 .col-md-8 {
   background-color: transparent;
   border: none;
-  font-size: 15px;
   margin: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.text-left {
+  font-size: 15px;
 }
 
 .footer {
