@@ -12,9 +12,13 @@
 
 <!-- Contains User Posts -->
 
+<div class="row row-centered">
+
+<div class="col-md-7 col-centered blog-posts">
+
 <% @posts.each do |post| %>
 
-<div class="col-md-8 col-centered blog-posts">
+<div class="text-left">
 
 <h4><%= link_to post.title, post %></h4>
 
@@ -25,8 +29,6 @@
 <% if post.image.exists? %>
 	<p><%= image_tag post.image.url(:medium) %></p>
 <% end %>
-
-<div class="text-left">
 
 <p>
 <%= post.content.html_safe %>
@@ -48,9 +50,12 @@
 <% end %>
 <% end %>
 
-</div>
+<p style="margin-bottom: 30px;"></p>
 
 <% end %>
+
+</div>
+</div>
 
 <!-- End of User Posts -->
 

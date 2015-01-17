@@ -60,16 +60,17 @@
   text-align: center;
 }
 
-.col-md-8 {
-  background-color: transparent;
+.col-md-7 {
+  background-color: white;
   border: none;
   margin: 10px;
-  padding-bottom: 20px;
-  
-  .text-left {
-  font-size: 15px;
-}
-
+  margin-right: -4px;
+  -webkit-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.58);
+  -moz-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.58);
+  box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.58);
+  p {
+    font-size: 14px;
+  }
 }
 
 .footer {
