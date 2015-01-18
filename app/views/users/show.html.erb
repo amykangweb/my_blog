@@ -14,9 +14,9 @@
 
 <div class="row row-centered">
 
-<div class="col-md-7 col-centered blog-posts">
-
 <% @posts.each do |post| %>
+
+<div class="col-md-7 col-centered blog-posts">
 
 <div class="text-left">
 
@@ -25,6 +25,8 @@
 <p>
 <em><%= post.created_at.strftime("%b %d %Y") %></em>
 </p>
+
+<hr></hr>
 
 <% if post.image.exists? %>
 	<p><%= image_tag post.image.url(:medium) %></p>
@@ -50,11 +52,12 @@
 <% end %>
 <% end %>
 
-<p style="padding-bottom: 50px;"></p>
+</div>
+
+<p style="padding-bottom: 40px;"></p>
 
 <% end %>
 
-</div>
 </div>
 
 <!-- End of User Posts -->

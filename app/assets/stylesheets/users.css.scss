@@ -7,17 +7,17 @@
 }
 
 .users-bg {
-	background-color: #fafaf2;
+	background-color: #4d4c4d;
   background-image: image-url("https://dl.dropboxusercontent.com/s/frta3ce97jmduub/skulls.png");
 }
 
 .blogname {
-	color: rgb(100, 100, 100);
+	color: white;
 	font-family: 'Marck Script', cursive;
 }
 
 .tagline {
-	color: rgb(100, 100, 100);
+	color: white;
 	font-family: 'Marck Script', cursive;
 	font-size: 20px;
 	font-weight: normal;
@@ -35,20 +35,20 @@
   border-radius: 0;
 
   a {
-  color: rgb(100, 100, 100);
+  color: white;
   font-size: 12px;
   &:visited {
-  color: rgb(100, 100, 100);
+  color: white;
   }
   }
 
   .nav > li > a {
-    color: rgb(100, 100, 100);
+    color: white;
     font-size: 12px;
   }
 
   .dropdown-menu {
-  background-color: white;
+  background-color: #4d4c4d;
   a {
   font-size: 12px;
   }
@@ -61,13 +61,18 @@
 }
 
 .col-md-7 {
-  background-color: white;
+  background-color: rgb(100, 100, 100);
+  color: white;
   border: none;
   margin: 10px;
   margin-right: -4px;
+  padding-bottom: 30px;
   -webkit-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.58);
   -moz-box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.58);
   box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.58);
+  a {
+    color: white;
+  }
   p {
     font-size: 14px;
   }
@@ -78,5 +83,9 @@
   padding-bottom: 20px;
   p {
     font-size: 12px;
+    color: white;
+  }
+  a {
+    color: white;
   }
 }
