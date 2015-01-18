@@ -33,7 +33,7 @@ end
 private
 
 def set_user
-	@user = User.find(params[:id])
+	@user = User.find_by_name(params[:id])
 end
 
 end

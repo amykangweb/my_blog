@@ -20,10 +20,10 @@
 
 <div class="text-left">
 
-<h4><%= link_to post.title, post %></h4>
+<h2><%= link_to post.title, post %></h2>
 
 <p>
-<%= post.created_at.strftime("%b %d %Y") %>
+<em><%= post.created_at.strftime("%b %d %Y") %></em>
 </p>
 
 <% if post.image.exists? %>
@@ -50,7 +50,7 @@
 <% end %>
 <% end %>
 
-<p style="margin-bottom: 30px;"></p>
+<p style="padding-bottom: 50px;"></p>
 
 <% end %>
 
